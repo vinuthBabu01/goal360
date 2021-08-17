@@ -1,0 +1,70 @@
+<div>
+
+  <br>
+  <div class="container">
+
+    <!-- Content -->
+    <div fxLayout="row" fxLayoutAlign="center center" class="content">
+
+      <!-- Card -->
+      <mat-card class="card">
+
+        <!-- Card title -->
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+          <h3>Live Scores</h3>
+        </mat-card-title>
+        <!-- Card title -->
+
+        <!-- Card content -->
+        <mat-card-content>
+          <div class="example-container mat-elevation-z8">
+
+            <!-- Table -->
+            <mat-table #table [dataSource]="dataSourcelive">
+
+              <!-- Home Team -->
+              <ng-container matColumnDef="home_team">
+                <mat-header-cell *matHeaderCellDef>Home Team</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.match_hometeam_name}}</mat-cell>
+              </ng-container>
+              <!-- Home Team -->
+              <!-- Home team score -->
+              <ng-container matColumnDef="hometeam_score">
+                <mat-header-cell *matHeaderCellDef>Home Team Score</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.match_hometeam_score}}</mat-cell>
+              </ng-container>
+              <!-- Home Team score--> 
+              <!-- Away team Score -->
+              <ng-container matColumnDef="awayteam_score">
+                <mat-header-cell *matHeaderCellDef>Away Time Score</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.match_awayteam_score }}</mat-cell>
+              </ng-container>
+              <!-- Away team Score -->
+              <!-- Away Team name -->
+              <ng-container matColumnDef="away_team">
+                <mat-header-cell *matHeaderCellDef>Away Team</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.match_awayteam_name }}</mat-cell>
+              </ng-container>
+              <!--Away Team name -->
+
+              
+              <mat-header-row *matHeaderRowDef="displayedColumnslive"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumnslive;"></mat-row>
+
+            </mat-table>
+            <!-- Table -->
+
+          </div>
+        </mat-card-content>
+        <!-- Card content -->
+
+      </mat-card>
+      <!-- Card -->
+
+    </div>
+    <!-- Content -->
+
+  </div>
+
+</div>
+

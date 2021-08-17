@@ -1,0 +1,69 @@
+<div>
+
+  <br>
+  <div class="container">
+
+    <!-- Content -->
+    <div fxLayout="row" fxLayoutAlign="center center" class="content">
+
+      <!-- Card -->
+      <mat-card class="card">
+
+        <!-- Card title -->
+        <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+          <h3>La-Liga Fixtures</h3>
+        </mat-card-title>
+        <!-- Card title -->
+
+        <!-- Card content -->
+        <mat-card-content>
+          <div class="example-container mat-elevation-z8">
+
+            <!-- Table -->
+            <mat-table #table [dataSource]="dataSourcefix">
+              <!-- Match Date -->
+              <ng-container matColumnDef="match_date">
+                <mat-header-cell *matHeaderCellDef>Match Date</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.match_date }}</mat-cell>
+              </ng-container>
+              <!-- Match Date -->
+              <!-- Home Team -->
+              <ng-container matColumnDef="home_team">
+                <mat-header-cell *matHeaderCellDef>Home Team</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.match_hometeam_name}}</mat-cell>
+              </ng-container>
+              <!-- Home Team -->
+              <!-- Match Time -->
+              <ng-container matColumnDef="match_time">
+                <mat-header-cell *matHeaderCellDef>Match Time</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.match_time }}</mat-cell>
+              </ng-container>
+              <!-- Match Time -->
+
+              <!-- Away Team name -->
+              <ng-container matColumnDef="away_team">
+                <mat-header-cell *matHeaderCellDef>Away Team</mat-header-cell>
+                <mat-cell *matCellDef="let row">{{ row.match_awayteam_name }}</mat-cell>
+              </ng-container>
+              <!--Away Team name -->
+
+              
+              <mat-header-row *matHeaderRowDef="displayedColumnsfix"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumnsfix;"></mat-row>
+
+            </mat-table>
+            <!-- Table -->
+
+          </div>
+        </mat-card-content>
+        <!-- Card content -->
+
+      </mat-card>
+      <!-- Card -->
+
+    </div>
+    <!-- Content -->
+
+  </div>
+
+</div>

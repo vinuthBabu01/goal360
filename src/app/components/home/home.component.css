@@ -1,0 +1,19 @@
+h1, p, p a {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.logo-image{
+  width: 46px;
+  height: 46px;
+  overflow: hidden;
+  margin-top: -6px;
+}
+
+#body {
+background-color: #0f1a30;
+}
+#news{
+  background-color: white;
+  width: 80px;
+  height:50px;
+  font-weight: 500;
+}
